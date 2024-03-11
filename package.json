@@ -10,7 +10,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "test:dogOrCat": "ts-node dogOrCat.ts"
+    "test:dogOrCat": "ts-node dogOrCat.ts",
+    "test:fizzbuzz": "ts-node fizzbuzz.ts"
   },
   "author": "",
   "license": "ISC",
