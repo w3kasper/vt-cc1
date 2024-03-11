@@ -51,7 +51,7 @@ type IDogOrCat = Cat | Dog;
   }
 
 // TEST
-// const animal = dogOrCat('Golden Retriever');
+// const animal = dogOrCat('Abyssinian');
 // console.log("this animal is", animal);
 //////
 
@@ -70,8 +70,7 @@ export function barkOrMeow(dogOrCat: IDogOrCat): "Bark" | "Meow" {
 }
 
 // TEST
-// Call the barkOrMeow function with the animal
-// const animal = dogOrCat('Golden Retriever');
+// const animal = dogOrCat('Sphynx');// Call the barkOrMeow function with the animal
 // console.log("this animal is", animal);
 // const sound = barkOrMeow(animal);
 // console.log("it makes a", sound);
@@ -97,17 +96,15 @@ export function dogOrCatMatch<T>(
   }
 
 //TEST
-/*
+
 // Define the match functions
+/*
 const match = {
     dog: (dog: Dog) => 'dog function called',
     cat: (cat: Cat) => 'cat function called',
   };
-// Call the dogOrCat function with a breed of a dog or a cat
-const animal = dogOrCat('Golden Retriever');
-// Then call the dogOrCatMatch function with the animal and the match functions
-const result = dogOrCatMatch(animal, match);
-// Now `result` is the return value of the dog or cat function depending on the animal
+const animal = dogOrCat('Persian');// Call the dogOrCat function with a breed of a dog or a cat
+const result = dogOrCatMatch(animal, match);// Then call the dogOrCatMatch function with the animal and the match functions
 console.log(result);
 */
 //////
@@ -126,12 +123,3 @@ export function DogOrCatMatchBarkOrMeow(dogOrCat: IDogOrCat): "Bark" | "Meow" {
   }
   
   main();
-
-
-
-
-
-  
-//notes: npm install -g typescript + npm init + npm install --save-dev typescript + npx tsc --init + npx tsc + npm install --save-dev ts-node
-
-
