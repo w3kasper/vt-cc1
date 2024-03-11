@@ -84,3 +84,56 @@ export function equal(answer1: PlayerAnswer, answer2: PlayerAnswer): boolean {
 // console.log(equal({ counter: 15, playerAnswer: 'Fizz Buzz' }, { counter: 15, playerAnswer: 'Fizz Buzz' }));  // true
 // console.log(equal({ counter: 1, playerAnswer: 1 }, { counter: 2, playerAnswer: 2 }));  // false
 // console.log(equal({ counter: 3, playerAnswer: 'Fizz' }, { counter: 3, playerAnswer: 'Buzz' }));  // false
+
+//CHALLENGE 2.3
+export function validateFizzBuzz(playerAnswer: PlayerAnswer): ValidatedAnswer {
+  if (!playerAnswer) {
+    throw new Error("Function Not Implemented");
+  }
+  const correctAnswer: IFizzBuzz = fizzBuzz(playerAnswer.counter).playerAnswer;
+
+  if (playerAnswer.playerAnswer === correctAnswer) {
+    return {
+      counter: playerAnswer.counter,
+      correct: true,
+      playerAnswer: playerAnswer.playerAnswer,
+      correctAnswer: correctAnswer
+    };
+  } else {
+    return {
+      counter: playerAnswer.counter,
+      correct: false,
+      playerAnswer: playerAnswer.playerAnswer,
+      correctAnswer: correctAnswer
+    };
+  }
+}
+
+//TEST
+// console.log(validateFizzBuzz({ counter: 1, playerAnswer: 1 }));  // { counter: 1, correct: true, playerAnswer: 1, correctAnswer: 1 }
+// console.log(validateFizzBuzz({ counter: 3, playerAnswer: 'Fizz' }));  // { counter: 3, correct: true, playerAnswer: 'Fizz', correctAnswer: 'Fizz' }
+// console.log(validateFizzBuzz({ counter: 5, playerAnswer: 'Buzz' }));  // { counter: 5, correct: true, playerAnswer: 'Buzz', correctAnswer: 'Buzz' }
+// console.log(validateFizzBuzz({ counter: 15, playerAnswer: 'Fizz Buzz' }));  // { counter: 15, correct: true, playerAnswer: 'Fizz Buzz', correctAnswer: 'Fizz Buzz' }
+// console.log(validateFizzBuzz({ counter: 3, playerAnswer: 'Buzz' }));  // { counter: 3, correct: false, playerAnswer: 'Buzz', correctAnswer: 'Fizz' }
+// console.log(validateFizzBuzz({ counter: 5, playerAnswer: 'Fizz' }));  // { counter: 5, correct: false, playerAnswer: 'Fizz', correctAnswer: 'Buzz' }
+
+////CHALLENGE 2.4
+export function isValidAnswer(validatedAnswer: ValidatedAnswer): boolean {
+  if (!validatedAnswer) {
+    throw new Error("Function Not Implemented");
+  }
+
+  if (validatedAnswer.correct === true) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+////TEST
+// const validatedAnswer1 = validateFizzBuzz({ counter: 3, playerAnswer: 'Fizz' });
+// console.log(isValidAnswer(validatedAnswer1));  // true
+
+// const validatedAnswer2 = validateFizzBuzz({ counter: 3, playerAnswer: 'Buzz' });
+// console.log(isValidAnswer(validatedAnswer2));  // false
+
